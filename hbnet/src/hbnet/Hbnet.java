@@ -5,6 +5,9 @@
  */
 package hbnet;
 
+import modelo.HibernateUtil;
+import org.hibernate.Session;
+
 /**
  *
  * @author Makhene
@@ -15,7 +18,9 @@ public class Hbnet {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        session.close();
     }
     
 }
